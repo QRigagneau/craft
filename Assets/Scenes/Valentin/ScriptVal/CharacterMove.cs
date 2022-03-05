@@ -8,7 +8,7 @@ public class CharacterMove : MonoBehaviour
     public  AudioSource AudioDeplacement;
 
     public float speed = 2.5f;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Vector2 dir;
     Animator anim;
 
@@ -28,7 +28,6 @@ public class CharacterMove : MonoBehaviour
         setSound(inmove);
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
-
         rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
         setParam();
     }
@@ -45,6 +44,7 @@ public class CharacterMove : MonoBehaviour
         if (dir.x == 0 && dir.y == 0)//static
         {
             anim.SetInteger("dir", 0);
+            
         }
         else if (dir.y < 0) //bas
         {
@@ -69,7 +69,65 @@ public class CharacterMove : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             inmove = true;
         }
+        inmove = false;
+        if (dir.x == 0 && dir.y == 0)//static
+        {
+            anim.SetInteger("dir2", 0);
 
+        }
+        else if (dir.y < 0) //bas
+        {
+            anim.SetInteger("dir2", 1);
+            inmove = true;
+        }
+
+        else if (dir.y > 0) //haut
+        {
+            anim.SetInteger("dir2", 3);
+            inmove = true;
+        }
+        else if (dir.x > 0) //droite
+        {
+            anim.SetInteger("dir2", 2);
+            GetComponent<SpriteRenderer>().flipX = true;
+            inmove = true;
+        }
+        else if (dir.x < 0) //gauche
+        {
+            anim.SetInteger("dir2", 2);
+            GetComponent<SpriteRenderer>().flipX = false;
+            inmove = true;
+            Debug.Log(anim.GetInteger("dir2"));
+        }
+        if (dir.x == 0 && dir.y == 0)//static
+        {
+            anim.SetInteger("Dir3", 0);
+
+        }
+        else if (dir.y < 0) //bas
+        {
+            anim.SetInteger("Dir3", 1);
+            inmove = true;
+        }
+
+        else if (dir.y > 0) //haut
+        {
+            anim.SetInteger("Dir3", 3);
+            inmove = true;
+        }
+        else if (dir.x > 0) //droite
+        {
+            anim.SetInteger("Dir3", 2);
+            GetComponent<SpriteRenderer>().flipX = true;
+            inmove = true;
+        }
+        else if (dir.x < 0) //gauche
+        {
+            anim.SetInteger("Dir3", 2);
+            GetComponent<SpriteRenderer>().flipX = false;
+            inmove = true;
+            Debug.Log(anim.GetInteger("Dir3"));
+        }
         //gameObject.PlayOneShoot(gameObject.GetComponent<AudioSource>());
     }
 }
