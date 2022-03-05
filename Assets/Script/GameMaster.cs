@@ -64,7 +64,7 @@ public class GameMaster : MonoBehaviour
         //replace Player            PlayerController
         player.GetComponent<LifeController>().resetLife();
         //reset inventaire          inventairController
-
+        player.transform.position = new Vector2(0.0f,0.0f);
         //kill and replace Item                 ItemController
         foreach (GameObject go in collectibles as List<GameObject>)
         {

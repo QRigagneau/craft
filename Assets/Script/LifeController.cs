@@ -9,7 +9,6 @@ public class LifeController : MonoBehaviour
     public GameObject gameMaster;
     public HealthBar healthBar;
     public  bool change = false;
-
     public GameObject playerJeune;
     public GameObject playerMedium;
     public GameObject playerVieux;
@@ -92,14 +91,17 @@ public class LifeController : MonoBehaviour
         if (age < 40)
         {
             nextSprite = playerJeune;
+            gameObject.GetComponent<CharacterMove>().speed = 5.0f;
         }
         if(age >= 40 && age < 60 )
         {
             nextSprite = playerMedium;
+            gameObject.GetComponent<CharacterMove>().speed = 3.0f;
         }
         if(age >= 60)
         {
             nextSprite = playerVieux;
+            gameObject.GetComponent<CharacterMove>().speed = 2.0f;
         }
 
         if (nextSprite != currentSprite)
