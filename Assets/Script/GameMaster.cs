@@ -8,6 +8,9 @@ public class GameMaster : MonoBehaviour
     public float valTimer = 0;
     public bool pause = false;
     public int countOfLoop;
+    public bool IsTalking;
+
+    public GameObject png;
     public GameObject player;
     private List<GameObject> collectibles = new List<GameObject>();
 
@@ -17,6 +20,7 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        png = GameObject.Find("png_maman");
         collectibles = GetAllCollectible();
     }
 
@@ -33,6 +37,11 @@ public class GameMaster : MonoBehaviour
         {
             //timertext.GetComponent<UnityEngine.UI.Text>().text = timerfinal.ToString() + "s";
             //Debug.Log(timerfinal.ToString() + "s");
+        }
+
+        if(IsTalking)
+        {
+            png.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
 
         //Debug.Log(countOfLoop);
