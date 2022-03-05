@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timetravel: -10
+  collectible: {fileID: 8300000, guid: 4bfc8308aa2af15438de343671ee272d, type: 3}
+  audiosource: {fileID: 0}
 --- !u!61 &-457918380359528962
 BoxCollider2D:
   m_ObjectHideFlags: 0
