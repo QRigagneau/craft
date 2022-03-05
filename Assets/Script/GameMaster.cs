@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditorInternal;
 
 public class GameMaster : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameMaster : MonoBehaviour
 
     public GameObject png;
     public GameObject player;
+
     private List<GameObject> collectibles = new List<GameObject>();
 
     //public GameObject timertext;
@@ -90,5 +92,7 @@ public class GameMaster : MonoBehaviour
 
         return listcollectibles;
     }
+
+   
 
 }

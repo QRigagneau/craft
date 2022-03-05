@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: Dir3
+    m_ConditionEvent: dir
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7043226431963439855}
@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: Dir3
+    m_ConditionEvent: dir
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1104315319706167852}
@@ -85,7 +85,7 @@ AnimatorController:
   m_Name: Player 60
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Dir3
+  - m_Name: dir
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -226,7 +226,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: Dir3
+    m_ConditionEvent: dir
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3315419539116383853}
@@ -251,7 +251,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: Dir3
+    m_ConditionEvent: dir
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6468124856325044224}

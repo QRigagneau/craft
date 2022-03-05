@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: dir2
+    m_ConditionEvent: dir
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 140304555203176048}
@@ -95,7 +95,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: dir2
+    m_ConditionEvent: dir
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4352858811156086020}
@@ -120,7 +120,7 @@ AnimatorController:
   m_Name: Player20ans
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: dir2
+  - m_Name: dir
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -200,7 +200,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: dir2
+    m_ConditionEvent: dir
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1388732258335761397}
@@ -251,7 +251,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: dir2
+    m_ConditionEvent: dir
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6872315458779871658}

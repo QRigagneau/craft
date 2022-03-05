@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class LifeController : MonoBehaviour
 {
-    public int age;
-    public float timeCycleAge;
+    public static int age;
+    public static float timeCycleAge;
     public GameObject gameMaster;
     public HealthBar healthBar;
-    public int stateAge;
-    public bool change = false;
+    public static bool change = false;
 
-    private float timerCount = 0.0f;
+    public GameObject playerJeune;
+    public GameObject playerMedium;
+    public GameObject playerVieux;
+
+    private GameObject currentSprite = null;
+    private GameObject nextSprite = null;
+
+    private static float timerCount = 0.0f;
+
+    public float agingSpeed = 5.0f;
 
 
     // Start is called before the first frame update
@@ -53,7 +61,7 @@ public class LifeController : MonoBehaviour
         if (!gameMaster.GetComponent<GameMaster>().pause)
         {
             timerCount += Time.deltaTime;
-            if (timerCount >= 0.2f) //5.0 s 
+            if (timerCount >= agingSpeed) //5.0 s 
             {
                 age += 1;
                 timerCount = 0.0f;
@@ -68,24 +76,49 @@ public class LifeController : MonoBehaviour
             gameMaster.GetComponent<GameMaster>().isDead();
         }
     }
+        
+    public int envoiAge()
+    {
+        return age;
+    }
+
+    public void setAge(int time)
+    {
+        age += time;
+    }
 
     public void checkStateLife()
     {
         if (age < 40)
         {
-            stateAge = 0;
-            change = true;
+            nextSprite = playerJeune;
         }
         if(age >= 40 && age < 60 )
         {
-            stateAge = 1;
-            change = true;
+            nextSprite = playerMedium;
         }
         if(age >= 60)
         {
-            stateAge = 2;
-            change = true;
+            nextSprite = playerVieux;
         }
+
+        if (nextSprite != currentSprite)
+        {
+            if (currentSprite)
+                currentSprite.SetActive(false);
+
+            currentSprite = nextSprite;
+
+            if (currentSprite)
+                currentSprite.SetActive(true);
+        }
+
+    
     }
 
+
+    public GameObject GetCurrentPlayerSprite()
+    {
+        return currentSprite;
+    }
 }

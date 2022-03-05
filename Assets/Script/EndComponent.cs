@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EndComponent : MonoBehaviour
 {
+    private int age;
 
     private GameObject player;
     // Start is called before the first frame update
@@ -16,7 +17,8 @@ public class EndComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<LifeController>().age <= 0)
+        age = gameObject.GetComponent<LifeController>().envoiAge();
+        if(age <= 0)
         {
             Debug.Log("oui");
             play();
@@ -27,4 +29,5 @@ public class EndComponent : MonoBehaviour
     {
         SceneManager.LoadScene("WinScene");
     }
+
 }

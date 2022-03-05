@@ -22,7 +22,7 @@ public class fragtime : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<CharacterMove>())
         {
-            player.GetComponent<LifeController>().age += timetravel;
+            player.GetComponent<LifeController>().setAge(timetravel);
             isUseCollectible();
         }
     }
