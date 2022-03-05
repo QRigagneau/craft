@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class GameMaster : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameMaster : MonoBehaviour
     public bool pause = false;
     public int countOfLoop;
     public GameObject player;
+    private List<GameObject> collectibles = new List<GameObject>();
 
     //public GameObject timertext;
 
@@ -15,7 +17,7 @@ public class GameMaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        collectibles = GetAllCollectible();
     }
 
     // Update is called once per frame
@@ -53,10 +55,31 @@ public class GameMaster : MonoBehaviour
         //reset inventaire          inventairController
 
         //kill and replace Item                 ItemController
-        //kill and replace Collectible          CollectibleController
+        foreach (GameObject go in collectibles as List<GameObject>)
+        {
+            go.GetComponent<CollectibleController>().refreshCollectible();
+        }
 
     }
 
+    List<GameObject> GetAllCollectible()
+    {
+        List<GameObject> objectsInScene = new List<GameObject>();
+        List<GameObject> listcollectibles = new List<GameObject>();
 
+        foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
+        {
+            if (!EditorUtility.IsPersistent(go.transform.root.gameObject) && !(go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave))
+                objectsInScene.Add(go);
+        }
+
+        foreach (GameObject go in objectsInScene as List<GameObject>)
+        {
+            if (go.GetComponent<CollectibleController>())
+                listcollectibles.Add(go);
+        }
+
+        return listcollectibles;
+    }
 
 }

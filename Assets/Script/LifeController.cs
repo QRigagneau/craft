@@ -41,12 +41,17 @@ public class LifeController : MonoBehaviour
         timerCount = 0.0f;
     }
 
+    public void getCollectible(int timeTravel)
+    {
+        age -= timeTravel;
+    }
+
     void RefreshAge()
     {
         if (!gameMaster.GetComponent<GameMaster>().pause)
         {
             timerCount += Time.deltaTime;
-            if (timerCount >= 5.0f) //5.0 s 
+            if (timerCount >= 0.2f) //5.0 s 
             {
                 age += 1;
                 timerCount = 0.0f;
