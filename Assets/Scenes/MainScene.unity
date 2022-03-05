@@ -693,6 +693,7 @@ MonoBehaviour:
   timeCycleAge: 0
   gameMaster: {fileID: 1293570384}
   healthBar: {fileID: 1288835535}
+  stateAge: 0
 --- !u!1 &347312570
 GameObject:
   m_ObjectHideFlags: 0
