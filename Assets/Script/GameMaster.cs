@@ -8,6 +8,8 @@ public class GameMaster : MonoBehaviour
     public float valTimer = 0;
     public bool pause = false;
     public int countOfLoop;
+    public bool IsTalking;
+
     public GameObject player;
     private List<GameObject> collectibles = new List<GameObject>();
 
