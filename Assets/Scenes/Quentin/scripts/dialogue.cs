@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class dialogue : MonoBehaviour
 {
-
-    public bool IsTalking;
+    private GameObject gamemaster;
 
     // Start is called before the first frame update
     void Start()
     {
-        IsTalking = false;
+        gamemaster = GameObject.Find("GameMaster");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(IsTalking);
+        Debug.Log(gamemaster.GetComponent<GameMaster>().IsTalking);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<png>())
         {
-            IsTalking = true;
+            gamemaster.GetComponent<GameMaster>().IsTalking = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        gamemaster.GetComponent<GameMaster>().IsTalking = false;
     }
 }
