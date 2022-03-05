@@ -66,7 +66,7 @@ public class GameMaster : MonoBehaviour
         //kill and replace Item                 ItemController
         foreach (GameObject go in collectibles as List<GameObject>)
         {
-            go.GetComponent<CollectibleController>().refreshCollectible();
+            go.GetComponent<fragtime>().refreshCollectible();
         }
 
     }
@@ -84,7 +84,7 @@ public class GameMaster : MonoBehaviour
 
         foreach (GameObject go in objectsInScene as List<GameObject>)
         {
-            if (go.GetComponent<CollectibleController>())
+            if (go.GetComponent<fragtime>())
                 listcollectibles.Add(go);
         }
 
