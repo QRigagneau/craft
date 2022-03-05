@@ -16,9 +16,9 @@ public class CharacterMove : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    
+
     void Update()
-    {       
+    {
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
 
