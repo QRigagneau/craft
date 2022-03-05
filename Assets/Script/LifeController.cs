@@ -9,6 +9,7 @@ public class LifeController : MonoBehaviour
     public GameObject gameMaster;
     public HealthBar healthBar;
     public int stateAge;
+    public bool change = false;
 
     private float timerCount = 0.0f;
 
@@ -27,7 +28,7 @@ public class LifeController : MonoBehaviour
         checkAge();
         JaugeRefresh();
         //Debug.Log(age);
-
+        checkStateLife();
         JaugeRefresh();
     }
 
@@ -70,17 +71,20 @@ public class LifeController : MonoBehaviour
 
     public void checkStateLife()
     {
-        if (age <= 20)
+        if (age < 40)
         {
             stateAge = 0;
+            change = true;
         }
-        else if(age > 20 && age <= 40)
+        if(age >= 40 && age < 60 )
         {
             stateAge = 1;
+            change = true;
         }
-        else if (age > 40 && age <= 90)
+        if(age >= 60)
         {
             stateAge = 2;
+            change = true;
         }
     }
 
