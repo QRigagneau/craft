@@ -12,6 +12,10 @@ public class UIPlayerController : MonoBehaviour
     public GameObject textTimer;
     public GameObject textAge;
 
+
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,4 +29,5 @@ public class UIPlayerController : MonoBehaviour
         textLoop.GetComponent<UnityEngine.UI.Text>().text = "Loop : " + gameMaster.GetComponent<GameMaster>().countOfLoop.ToString();
         textAge.GetComponent<UnityEngine.UI.Text>().text = "Age : " + player.GetComponent<LifeController>().age.ToString();
     }
+
 }
