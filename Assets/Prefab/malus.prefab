@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1678539858084981556}
   - component: {fileID: 1028392592701597570}
   m_Layer: 0
-  m_Name: Square
+  m_Name: malus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
