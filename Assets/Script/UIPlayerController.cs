@@ -25,7 +25,7 @@ public class UIPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textTimer.GetComponent<UnityEngine.UI.Text>().text = "timer : " + gameMaster.GetComponent<GameMaster>().valTimer.ToString() + " s";
+        textTimer.GetComponent<UnityEngine.UI.Text>().text = "timer : " + Mathf.Round(gameMaster.GetComponent<GameMaster>().valTimer).ToString() + " s";
         textLoop.GetComponent<UnityEngine.UI.Text>().text = "Loop : " + gameMaster.GetComponent<GameMaster>().countOfLoop.ToString();
         textAge.GetComponent<UnityEngine.UI.Text>().text = "Age : " + player.GetComponent<LifeController>().age.ToString();
     }
