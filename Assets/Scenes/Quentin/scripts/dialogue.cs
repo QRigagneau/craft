@@ -15,7 +15,6 @@ public class dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gamemaster.GetComponent<GameMaster>().IsTalking);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
