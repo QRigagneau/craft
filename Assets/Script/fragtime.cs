@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fragtime : MonoBehaviour
 {
-
+    public int timetravel;
     private GameObject player;
 
     // Start is called before the first frame update
@@ -16,14 +16,13 @@ public class fragtime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.GetComponent<CharacterMove>())
         {
-            player.GetComponent<LifeController>().age -= 10;
+            player.GetComponent<LifeController>().age += timetravel;
             isUseCollectible();
         }
     }
