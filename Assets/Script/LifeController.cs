@@ -8,6 +8,7 @@ public class LifeController : MonoBehaviour
     public float timeCycleAge;
     public GameObject gameMaster;
     public HealthBar healthBar;
+    public int stateAge;
 
     private float timerCount = 0.0f;
 
@@ -64,6 +65,22 @@ public class LifeController : MonoBehaviour
         if (age == 90)
         {
             gameMaster.GetComponent<GameMaster>().isDead();
+        }
+    }
+
+    public void checkStateLife()
+    {
+        if (age <= 20)
+        {
+            stateAge = 0;
+        }
+        else if(age > 20 && age <= 40)
+        {
+            stateAge = 1;
+        }
+        else if (age > 40 && age <= 90)
+        {
+            stateAge = 2;
         }
     }
 
