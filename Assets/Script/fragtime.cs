@@ -5,7 +5,7 @@ using UnityEngine;
 public class fragtime : MonoBehaviour
 {
     public int timetravel;
-    private GameObject player;
+    private GameObject PlayerPack;
 
     private GameObject collectiblesound;
 
@@ -15,7 +15,7 @@ public class fragtime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("player");
+        PlayerPack = GameObject.Find("PlayerPack");
         collectiblesound = GameObject.Find("collectiblesound");
         audiosource = collectiblesound.GetComponent<AudioSource>();
     }
@@ -29,13 +29,8 @@ public class fragtime : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<CharacterMove>())
         {
-<<<<<<< HEAD
-            player.GetComponent<LifeController>().setAge(timetravel);
-            isUseCollectible();
-=======
-            player.GetComponent<LifeController>().age += timetravel;
+            PlayerPack.GetComponent<LifeController>().age += timetravel;
             isUseCollectible();            
->>>>>>> a4df131a2232b0e3b4a19448b6a655f8d61ec257
         }
         PlayCollectibleSound();
     }

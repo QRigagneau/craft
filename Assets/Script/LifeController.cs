@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LifeController : MonoBehaviour
 {
-    public static int age;
-    public static float timeCycleAge;
+    public  int age;
+    public  float timeCycleAge;
     public GameObject gameMaster;
     public HealthBar healthBar;
-    public static bool change = false;
+    public  bool change = false;
 
     public GameObject playerJeune;
     public GameObject playerMedium;

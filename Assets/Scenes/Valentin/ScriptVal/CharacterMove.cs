@@ -15,7 +15,7 @@ public class CharacterMove : MonoBehaviour
 
     Vector2 dir;
     Animator anim;
-    private static int state;
+    
 
     private bool inmove;
 
