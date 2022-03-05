@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
-    private float valTimer = 0;
-    private float timerfinal;
-    
+    public float valTimer = 0;
     public bool pause = false;
     public int countOfLoop;
     public GameObject player;
@@ -26,7 +24,6 @@ public class GameMaster : MonoBehaviour
         if (!pause)
         {
             valTimer += Time.deltaTime;
-            timerfinal = valTimer;
             //timertext.GetComponent<UnityEngine.UI.Text>().text = timerfinal.ToString() + "s";
             //Debug.Log(timerfinal.ToString() + "s");
         }
