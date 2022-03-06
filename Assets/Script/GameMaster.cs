@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEditorInternal;
 
 public class GameMaster : MonoBehaviour
 {
@@ -77,13 +75,10 @@ public class GameMaster : MonoBehaviour
         List<GameObject> objectsInScene = new List<GameObject>();
         List<GameObject> listcollectibles = new List<GameObject>();
 
-        foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
-        {
-            if (!EditorUtility.IsPersistent(go.transform.root.gameObject) && !(go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave))
-                objectsInScene.Add(go);
-        }
+        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
 
-        foreach (GameObject go in objectsInScene as List<GameObject>)
+
+        foreach (GameObject go in allObjects)
         {
             if (go.GetComponent<fragtime>())
                 listcollectibles.Add(go);
