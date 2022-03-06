@@ -35,13 +35,13 @@ public class fragtime : MonoBehaviour
         {
             if(this.gameObject.CompareTag("random"))
             {
-                PlayerPack.GetComponent<LifeController>().age += timerandom;
+                PlayerPack.GetComponent<LifeController>().age += agerandom + timerandom;
                 isUseCollectible();
             }
 
             else
             {
-                PlayerPack.GetComponent<LifeController>().age += agerandom + timerandom;
+                PlayerPack.GetComponent<LifeController>().age += timetravel;
                 isUseCollectible();
             }
         }
