@@ -11,7 +11,7 @@ public class ValueSceneTransfere : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameMaster = GameObject.Find("GameMaster");
     }
     void Awake()
     {
@@ -27,4 +27,14 @@ public class ValueSceneTransfere : MonoBehaviour
         }
         
     }
+    public float getTimer()
+    {
+        return timer;
+    }
+
+    public float getLoop()
+    {
+        return loop;
+    }
+
 }

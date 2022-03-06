@@ -9,7 +9,6 @@ public class GameMaster : MonoBehaviour
     public float valTimer = 0;
     public bool pause = false;
     public int countOfLoop;
-    public int gmAge;
     public bool IsTalking;
 
     public GameObject png;
