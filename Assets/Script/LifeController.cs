@@ -70,7 +70,7 @@ public class LifeController : MonoBehaviour
 
     void checkAge()
     {
-        if (age == 90)
+        if (age >= 90)
         {
             gameMaster.GetComponent<GameMaster>().isDead();
         }
