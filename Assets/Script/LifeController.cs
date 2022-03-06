@@ -18,7 +18,7 @@ public class LifeController : MonoBehaviour
 
     private static float timerCount = 0.0f;
 
-    public float agingSpeed = 5.0f;
+    public float agingSpeed = 2.5f;
 
 
     // Start is called before the first frame update
