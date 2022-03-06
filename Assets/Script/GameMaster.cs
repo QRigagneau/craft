@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
     public float valTimer = 0;
     public bool pause = false;
     public int countOfLoop;
+    public int gmAge;
     public bool IsTalking;
 
     public GameObject png;
@@ -60,11 +61,13 @@ public class GameMaster : MonoBehaviour
     public void isDead()
     {
         countOfLoop += 1;
-        //replace Player            PlayerController
+
         player.GetComponent<LifeController>().resetLife();
-        //reset inventaire          inventairController
+
+        //replace Player
         player.transform.position = new Vector2(0.0f,0.0f);
-        //kill and replace Item                 ItemController
+
+        //kill and replace collectible
         foreach (GameObject go in collectibles as List<GameObject>)
         {
             go.GetComponent<fragtime>().refreshCollectible();

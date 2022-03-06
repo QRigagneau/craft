@@ -8,6 +8,7 @@ public class EndComponent : MonoBehaviour
     private int age;
 
     private GameObject player;
+    private GameObject gameMaster;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class EndComponent : MonoBehaviour
     void Update()
     {
         age = gameObject.GetComponent<LifeController>().envoiAge();
-        if(age <= 0)
+
+        if (age <= 0)
         {
             Debug.Log("oui");
             play();
